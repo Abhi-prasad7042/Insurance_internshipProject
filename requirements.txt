@@ -7,3 +7,5 @@ seaborn
 jupyter
 pytest
 tox 
+flake8
+flask
