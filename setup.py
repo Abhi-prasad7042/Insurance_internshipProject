@@ -6,5 +6,5 @@ setup(
     version='0.1.0',
     description='Insurance premium prediction',
     author='abhi-prasad7042',
-    license='MIT',
+    license="LICENSE"
 )
