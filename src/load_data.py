@@ -11,10 +11,6 @@ file_handler = logging.FileHandler('./logs/load_data.logs')
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-
-# logging.basicConfig(filename="./logs/load_data.logs",filemode="w",format='%(asctime)s %(levelname)s %(message)s', level = logging.INFO)
-
-
 def load_save(config_path):
     try:
         config = read_params(config_path)

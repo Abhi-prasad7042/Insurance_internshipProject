@@ -5,7 +5,6 @@ dirs = [
     os.path.join("data","raw"),
     os.path.join("data","processed"),
     "notebooks",
-    "saved_models",
     "src",
     "models",
     os.path.join("webapp", "templates"),

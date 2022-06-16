@@ -12,14 +12,15 @@ load_data:
 split_data:
   train_path: data/processed/train_dataset.csv
   test_path: data/processed/test_dataset.csv
+  test_size: 0.2
 
 estimators:
   RandomForestRegressor:
     params:
-      criterion: 'mse'
+      criterion: 'squared_error'
       max_depth: 5
-      min_samples_split': 4
-      n_estimators': 300
+      min_samples_split: 4
+      n_estimators: 300
 
 reports:
   params: reports/params.json
