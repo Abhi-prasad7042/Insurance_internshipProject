@@ -33,7 +33,6 @@ def predict():
     try:
         final_feat = list(request.form.values())
         final_feat = np.array(final_feat).reshape(1,6)
-
         output = model.predict(final_feat)[0]
         return render_template("predict.html",output=output)
 
