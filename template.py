@@ -8,6 +8,7 @@ dirs = [
     "src",
     "models",
     os.path.join("webapp", "templates"),
+    os.path.join("webapp", "static"),
     "reports",
     "logs",
     "docs",
