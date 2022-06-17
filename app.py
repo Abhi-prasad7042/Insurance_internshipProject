@@ -13,20 +13,28 @@ file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
 webapp_root = "webapp"
+static_dir = os.path.join(webapp_root,"static")
 template_dir = os.path.join(webapp_root,"templates")
 logger.info("template_dir linked succssfully")
 
 model = joblib.load("models/model.joblib")
 logger.info("model load successfully")
 
-app = Flask(__name__, template_folder=template_dir)
+app = Flask(__name__,static_folder=static_dir, template_folder=template_dir)
 
 @app.route("/")
 def index():
     try:
         return render_template("home.html")
     except Exception as e:
-        logging.error(e)
+        logger.error(e)
+
+@app.route("/about")
+def about():
+    try:
+        return render_template("about.html")
+    except Exception as e:
+        logger.error(e)
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -37,8 +45,8 @@ def predict():
         return render_template("predict.html",output=output)
 
     except Exception as e:
-        logging.error(e)
+        logger.error(e)
 
 if __name__ =="__main__":
-    logging.info("Application running succussfully")
+    logger.info("Application running succussfully")
     app.run(debug=True)
